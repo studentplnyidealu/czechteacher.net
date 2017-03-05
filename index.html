@@ -1,0 +1,23 @@
+---
+layout: default
+title: Home
+---
+
+<section class="intro">
+  <div class="container">
+    <p class="lead">{{ site.description }}</p>
+  </div>
+</section>
+
+<section class="post-list">
+  <div class="container">
+    {% for post in site.posts %}
+    <a href="{{ post.url | prepend: site.baseurl }}" class="post-item">
+      <article>
+          <span class="post-meta date">{{ post.date | date: "%Y-%m-%d" }}</span>&nbsp;—&nbsp;<strong class="post-link">{{ post.title }}</strong>&nbsp;—
+        <span class="post-excerpt">{{ post.excerpt | strip_html }}</span>
+      </article>
+    </a>
+    {% endfor %}
+  </div>
+</section>
