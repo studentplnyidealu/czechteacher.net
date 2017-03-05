@@ -15,7 +15,7 @@ title: Home
     <a href="{{ post.url | prepend: site.baseurl }}" class="post-item">
       <article>
           <span class="post-meta date">{{ post.date | date: "%Y-%m-%d" }}</span>&nbsp;—&nbsp;<strong class="post-link">{{ post.title }}</strong>&nbsp;—
-        <span class="post-excerpt">{{ post.excerpt | strip_html }}</span>
+        <span class="post-excerpt hyphenate">{{ post.excerpt | strip_html }}</span>
       </article>
     </a>
     {% endfor %}

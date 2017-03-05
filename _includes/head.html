@@ -99,6 +99,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/js/moment.min.js"></script>
+  <script src="/assets/js/jquery.hypher.js"></script>
+  <script src="/assets/js/cs.js"></script>
   <script type="text/javascript">
   var disqus_shortname = '{{ site.disqus_shortname }}';
   var _gaq = _gaq || [];
@@ -113,6 +115,7 @@
 
   $(function () {
     moment.locale('cs');
+    $('p, .hyphenate').hyphenate('cs');
 
     $('.date').each(function () {
       var el = $(this);
