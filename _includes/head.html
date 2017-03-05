@@ -3,6 +3,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="AImovFRpb158wmxVcEflYYF4zNp-i2GC4Fl0V_oANBA" />
 
   {% assign page_title = '' %}
   {% if page.title == "Home" %}
@@ -114,13 +115,20 @@
   })();
 
   $(function () {
-    moment.locale('cs');
+    moment.locale('cs', {
+      calendar: {
+        sameDay : '[dnes]',
+        lastDay : '[včera]',
+        lastWeek : 'dddd',
+        sameElse : 'MMMM YYYY'
+      }
+    });
     $('p, .hyphenate').hyphenate('cs');
 
     $('.date').each(function () {
       var el = $(this);
       var date = moment(el.html());
-      var formattedDate = date.fromNow();
+      var formattedDate = date.calendar();
 
       el.attr('title', date.format('Do MMMM YYYY'));
       el.html(formattedDate);
